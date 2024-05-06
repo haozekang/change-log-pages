@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>更新日志</title>
+</head>
+
+<body>
+    <h2 style="border-bottom: 1px solid #eaeaea; padding-bottom: 0.3em;">更新日志</h2>
+
+    <h3>2024-04-29</h3>
+    <h4>杂凑算法：</h4>
+    <ol>
+        <li>新增MD2/MD4/SHA3/SHA224/SHA384</li>
+        <li>优化界面及交互方式</li>
+        <li>新增文件计算</li>
+    </ol>
+
+    <h4>ZUC算法：</h4>
+    <ol>
+        <li>提取GMSSL库方法，使用C#重构代码</li>
+        <li>新增ZUC256算法支持</li>
+    </ol>
+
+    <h3>2024-04-18</h3>
+    <ol>
+        <li>RSA常规模式下的签名生成及验签的实现</li>
+        <li>RSA的Hex模式下的签名生成及验签功能的实现</li>
+        <li>实现Byte逆序</li>
+        <li>实现BigInt大数加减乘、模加减乘、逻辑运算</li>
+    </ol>
+
+    <h3>2024-04-17</h3>
+    <ol>
+        <li>优化代码</li>
+        <li>添加SM2自动识别签名值</li>
+        <li>优化自动识别剪贴板的SM2公钥逻辑</li>
+        <li>SM2加解密及签名验签支持识别Base64编码</li>
+        <li>添加SM2签名和公钥整体复制按钮</li>
+        <li>SM2公钥、私钥、随机数、密文、签名值可在Base64和Hex字符串直接相互自动转换</li>
+        <li>SM2加解密的明文、SM2签名验签的消息均支持UTF-8明文</li>
+    </ol>
+
+    <h3>2024-04-12</h3>
+    <ol>
+        <li>更新Tanovo扩展方法包，Base64解码方法改为扩展方法，兼容不规范Base64格式</li>
+        <li>消息框添加默认图标</li>
+        <li>新增RSA加解密的Hex密钥模式</li>
+        <li>SM2加解密对十六进制明文未符合长度时进行有好提示</li>
+        <li>SM2添加公钥自动识别功能，自动拆分，自动过滤“04”</li>
+        <li>ZUC增加加密模式切换功能，256模式暂未实现</li>
+        <li>SM2加解密新增SM2可固定随机参数</li>
+        <li>修复ZUC加密错误</li>
+        <li>SM2加解密添加公钥自动识别</li>
+        <li>SM2加解密添加C1C3C2模式加解密</li>
+        <li>SM2加解密添加使用UserId</li>
+    </ol>
+
+    <h3>2024-04-09</h3>
+    <ol>
+        <li>优化代码</li>
+        <li>修复授权时，验证失败无提示BUG</li>
+        <li>修复通过识别注册表授权时出现异常无法弹出授权界面BUG</li>
+        <li>更新说明文档</li>
+        <li>修改授权验证算法为SM2</li>
+    </ol>
+
+    <h3>2024-04-08</h3>
+    <ol>
+        <li>实现SM2加解密；实现SM2签名及验签</li>
+    </ol>
+
+    <h3>2024-04-07</h3>
+    <ol>
+        <li>创建SM2界面</li>
+        <li>RSA在加密是增加随机因子</li>
+        <li>修复SM4密文长度过长问题</li>
+        <li>优化兼容不规范格式Base64</li>
+        <li>实现URL和ASCII编码解码</li>
+    </ol>
+
+    <h3>2024-04-03</h3>
+    <ol>
+        <li>新增ZUC加解密；实现RSA界面</li>
+    </ol>
+
+    <h3>2024-04-01</h3>
+    <ol>
+        <li>修改README</li>
+        <li>新增激活功能及关于界面</li>
+        <li>修复分组算法报错崩溃</li>
+        <li>去除Windows默认不支持的分组算法</li>
+        <li>新增DES分组算法</li>
+        <li>修复杂凑算法SM3在BASE64下没有转换为BASE64字符串BUG</li>
+    </ol>
+
+    <h3>2024-03-29</h3>
+    <ol>
+        <li>更新OpenSSL到3.0的库</li>
+        <li>完成分组算法的加解密及界面实现</li>
+    </ol>
+
+    <h3>2024-03-20</h3>
+    <ol>
+        <li>修改版本控制为Git</li>
+        <li>初始化项目</li>
+    </ol>
+</body>
+</html>
