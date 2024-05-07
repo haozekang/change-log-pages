@@ -4,6 +4,8 @@
 1. Base64新增可解码位Hex字符串
 2. 修复ZUC算法IV长度检验错误BUG，增加空数据时友好提示
 3. 新增ChaCha20、ChaCha20-Poly1305、RC4算法支持
+4. 分组算法修复解密功能无法使用BUG
+5. 分组算法新增Padding，支持ZeroBytePadding、Pkcs7Padding、X923Padding、TbcPadding、ISO7816d4Padding、ISO10126d2Padding等
 
 ### 2024-05-06
 1. 去除OpenSSL库的引用，删除GmSSL的DLL文件，去除Vive.Crypto库的引用
