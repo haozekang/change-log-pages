@@ -1,112 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>更新日志</title>
 </head>
 
 <body>
-    <h2 style="border-bottom: 1px solid #eaeaea; padding-bottom: 0.3em;">更新日志</h2>
-
-    <h3>2024-05-08</h3>
-    <ol>
-        <li>新增ftp协议的CRL地址显示</li>
-        <li>验证阶段不渲染，系统自带证书详情</li>
-        <li>新增CRL验证，目前只支持验证待测证书的CRL</li>
-        <li>修复重复获取系统证书BUG</li>
-        <li>更新验证操作为异步校验，不阻塞UI线程</li>
-    </ol>
-
-    <h3>2024-05-07</h3>
-    <ol>
-        <li>消息弹框放置在窗体中间显示</li>
-        <li>将证书链的验证顺序改为从左向右</li>
-        <li>证书节点在做证书检验是增加有好剪头及叉符号显示</li>
-        <li>修复清空节点按钮点击时，未清空验证状态信息及证书详情信息BUG</li>
-        <li>更新iconfont字体图标库</li>
-        <li>新增NXCA中间证书，序号【1000000000000008】，指纹【25aa583d181de4befb4920842efcd57d1c538f14】</li>
-    </ol>
-
-    <h3>2024-04-30</h3>
-    <ol>
-        <li>数字证书检测工具UI按新需求重新绘制，并按新的逻辑完成证书链的校验</li>
-        <li>调用系统及自带证书时，显示有好提示信息</li>
-    </ol>
-
-    <h3>2024-04-17</h3>
-    <ol>
-        <li>左侧证书详情区域添加证书序列号</li>
-        <li>证书详情列表，列“值”的单元格添加双击可复制其内容功能，并在右上角添加有好信息提示框</li>
-        <li>公钥算法的Size添加Bits单位</li>
-        <li>CRL分发点进行过滤，只保留http和ldap格式的链接</li>
-    </ol>
-
-    <h3>2024-04-16</h3>
-    <ol>
-        <li>新增证书链的验证</li>
-        <li>RSA改为手动验签，不使用微软的X509方法里的验签方法</li>
-        <li>新增RSA验签时使用的MD2、MD5、SHA384、SHA512等杂凑</li>
-        <li>提示框信息添加图标</li>
-        <li>修复签名异常的SM2证书读取报错</li>
-    </ol>
-
-    <h3>2024-04-15</h3>
-    <ol>
-        <li>UI布局优化</li>
-        <li>支持拖拽证书至程序</li>
-        <li>增加验证结果区域，通过绿色显示，不通过红色显示</li>
-        <li>增加整体结果及证书合规情况显示框</li>
-    </ol>
-
-    <h3>2024-04-09</h3>
-    <ol>
-        <li>优化代码</li>
-        <li>修复授权时，验证失败无提示BUG</li>
-        <li>修复通过识别注册表授权时出现异常无法弹出授权界面BUG</li>
-        <li>更新授权加密算法为SM2</li>
-    </ol>
-
-    <h3>2024-04-03</h3>
-    <ol>
-        <li>自签名证书不做验证</li>
-    </ol>
-
-    <h3>2024-04-01</h3>
-    <ol>
-        <li>修改README</li>
-        <li>移除激活工具项目</li>
-    </ol>
-
-    <h3>2024-03-28</h3>
-    <ol>
-        <li>修复自签名证书识别失败BUG</li>
-        <li>修复关于界面版本信息获取错误BUG</li>
-        <li>修复RSA公钥值获取过多BUG</li>
-        <li>修复RSA公钥长度获取失败BUG</li>
-    </ol>
-
-    <h3>2024-03-27</h3>
-    <ol>
-        <li>新增授权功能</li>
-        <li>新增关于界面</li>
-        <li>新增激活界面</li>
-        <li>Tanovo授权工具开发</li>
-        <li>修复SM2证书无法验证问题</li>
-    </ol>
-
-    <h3>2024-03-25</h3>
-    <ol>
-        <li>修复验证失败</li>
-        <li>不解析显示SCT列表</li>
-        <li>CRL分发点显示优化</li>
-        <li>SM2证书的【公钥值】和【签名值】按照坐标点展示</li>
-    </ol>
-
-    <h3>2024-03-22</h3>
-    <ol>
-        <li>添加方法注解</li>
-        <li>初始化提交代码</li>
-        <li>添加 README.md</li>
-    </ol>
+    <div id="markdown-content"></div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        fetch('CHANGELOG.md') // 替换为你的Markdown文件路径
+            .then(response => response.text())
+            .then(markdown => {
+                const html = marked.parse(markdown);
+                document.getElementById('markdown-content').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error loading or parsing Markdown file:', error);
+            });
+    </script>
 </body>
 </html>
